@@ -1,29 +1,25 @@
-import React from 'react';
-import { Layout } from 'antd';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import React from "react";
+import { Layout } from "antd";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Home from './pages/Home';
-import TopBar from './components/TopBar';
+import Home from "./pages/Home";
+import TopBar from "./components/TopBar";
 
-import 'antd/dist/antd.css';
+import "antd/dist/antd.css";
 
-const { Content, Header } = Layout;
+const { Content } = Layout;
 
 function App() {
   return (
     <Layout>
       <Content>
-        <TopBar />
         <Router>
+          <TopBar />
           <Switch>
-              <Route path="/">
-                <Home/>
-              </Route>
-            </Switch>
+            <Route exac path="/">
+              <Home />
+            </Route>
+          </Switch>
         </Router>
       </Content>
     </Layout>
