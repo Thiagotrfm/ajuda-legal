@@ -1,0 +1,29 @@
+@import "~antd/dist/antd.less";
+
+@componentName: ~"banner";
+
+.@{componentName} {
+  height: 100vh;
+  position: relative;
+  width: 100vw;
+
+  .@{componentName}-img {
+    height: calc(100% - 100px);
+    width: 100%;
+  }
+
+  .@{componentName}-overlay {
+    height: calc(100% - 100px);
+    position: absolute;
+    top: 0px;
+    width: 100%;
+  }
+
+  .@{componentName}-overlay.dark {
+    background-color: rgba(0, 0, 0, 0.65);
+  }
+
+  .@{componentName}-overlay.light {
+    background-color: rgba(255, 255, 255, 0.65);
+  }
+}

@@ -16,9 +16,7 @@ function App() {
         <Router>
           <TopBar />
           <Switch>
-            <Route exac path="/">
-              <Home />
-            </Route>
+            <Route exac path="/home" component={Home} />
           </Switch>
         </Router>
       </Content>

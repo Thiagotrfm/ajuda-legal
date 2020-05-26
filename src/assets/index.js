@@ -1,7 +1,9 @@
-import logo from './images/logo.jpeg'
+import cover from "./images/cover.jpg";
+import logo from "./images/logo.jpeg";
 
 const IMAGES = {
-    logo: logo,
-}
+  cover: cover,
+  logo: logo,
+};
 
 export default IMAGES;

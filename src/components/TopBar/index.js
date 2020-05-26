@@ -20,7 +20,7 @@ function TopBar() {
       }
     };
 
-    return menuItems.map((item, index) => {
+    let items = menuItems.map((item, index) => {
       return (
         <div
           className={
@@ -37,6 +37,8 @@ function TopBar() {
         </div>
       );
     });
+
+    return items;
   }, [history, pathname]);
 
   return (

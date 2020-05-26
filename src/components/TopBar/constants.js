@@ -3,7 +3,7 @@ const CONSTANTS = {
   menuItems: [
     {
       title: "Início",
-      pathname: "/",
+      pathname: "/home",
     },
     {
       title: "Peça ajuda",
