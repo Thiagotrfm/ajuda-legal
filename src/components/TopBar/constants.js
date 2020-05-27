@@ -1,30 +1,7 @@
 const CONSTANTS = {
   componentName: "top-bar",
-  menuItems: [
-    {
-      title: "Início",
-      pathname: "/home",
-    },
-    {
-      title: "Peça ajuda",
-      pathname: "/help",
-    },
-    {
-      title: "Mova-se",
-      pathname: "/move",
-    },
-    {
-      title: "O que fazemos",
-      pathname: "/what-we-do",
-    },
-    {
-      title: "Conheça-nos",
-      pathname: "/about-us",
-    },
-  ],
-  locales: {
-    topBarTitle: "Ajuda Legal",
-  },
+  minStyleHeight: 60,
+  styleHeight: 100,
 };
 
 export default CONSTANTS;
