@@ -1,16 +1,44 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 import CONSTANTS from "./constants";
 import IMAGES from "../../assets";
+import LOCALES from "../../locales/topbar";
 
 import "./styles.less";
 
-const { componentName, menuItems } = CONSTANTS;
+const { componentName } = CONSTANTS;
+const { menuItems } = LOCALES;
 
 function TopBar() {
   const [pathname, setPathname] = useState(document.location.pathname);
+  const [topBarStyle, setTopbarStyle] = useState({
+    height:
+      window.innerWidth > 992
+        ? CONSTANTS.styleHeight
+        : CONSTANTS.minStyleHeight,
+  });
   let history = useHistory();
+
+  const updateScrollPosition = () => {
+    const style = {
+      height: Math.max(
+        CONSTANTS.minStyleHeight,
+        CONSTANTS.styleHeight - window.scrollY / 10
+      ),
+    };
+    const minStyle = { height: CONSTANTS.minStyleHeight };
+
+    setTopbarStyle(window.innerWidth > 992 ? style : minStyle);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", updateScrollPosition);
+
+    return () => {
+      window.removeEventListener("scroll", updateScrollPosition);
+    };
+  });
 
   const items = useMemo(() => {
     const onItemClick = (menuItem) => {
@@ -42,8 +70,13 @@ function TopBar() {
   }, [history, pathname]);
 
   return (
-    <div className={componentName}>
-      <img alt="logo" className={componentName + "-logo"} src={IMAGES.logo} />
+    <div className={componentName} style={topBarStyle}>
+      <img
+        alt="logo"
+        className={componentName + "-logo"}
+        src={IMAGES.logo}
+        style={topBarStyle}
+      />
       <div className={componentName + "-menu"}>{items}</div>
     </div>
   );
