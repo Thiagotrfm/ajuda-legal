@@ -1,4 +1,5 @@
-import React, { useMemo, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+
 import { useHistory } from "react-router-dom";
 
 import CONSTANTS from "./constants";
@@ -40,7 +41,7 @@ function TopBar() {
     };
   });
 
-  const items = useMemo(() => {
+  const items = () => {
     const onItemClick = (menuItem) => {
       if (pathname !== menuItem.pathname) {
         history.push(menuItem?.pathname || "");
@@ -67,7 +68,7 @@ function TopBar() {
     });
 
     return items;
-  }, [history, pathname]);
+  };
 
   return (
     <div className={componentName} style={topBarStyle}>
@@ -77,7 +78,7 @@ function TopBar() {
         src={IMAGES.logo}
         style={topBarStyle}
       />
-      <div className={componentName + "-menu"}>{items}</div>
+      <div className={componentName + "-menu"}>{items()}</div>
     </div>
   );
 }
