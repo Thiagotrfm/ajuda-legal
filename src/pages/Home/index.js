@@ -6,7 +6,6 @@ import LOCALES from "../../locales/home";
 
 import CONSTANTS from "./constants";
 import IMAGES from "../../assets";
-
 import "./styles.less";
 
 const { pageName } = CONSTANTS;
