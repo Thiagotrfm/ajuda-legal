@@ -1,7 +1,7 @@
 import React from "react";
 
 import Banner from "../../components/Banner";
-import Carousel from "../../components/Carousel";
+import Header from "../../components/Header";
 import LOCALES from "../../locales/home";
 
 import CONSTANTS from "./constants";
@@ -13,13 +13,14 @@ const { pageName } = CONSTANTS;
 function Home() {
   return (
     <div className={pageName}>
+      <Header />
       <Banner
         imageSrc={IMAGES.cover}
         subtitle={LOCALES.subtitle}
         theme="dark"
       />
-      <Carousel />
       <Banner
+        id="move"
         imageSrc={IMAGES.cover}
         subtitle={LOCALES.subtitle}
         theme="dark"

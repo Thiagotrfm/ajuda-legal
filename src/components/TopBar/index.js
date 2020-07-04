@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-
-import { useHistory } from "react-router-dom";
+import $ from "jquery";
 
 import CONSTANTS from "./constants";
 import IMAGES from "../../assets";
@@ -12,25 +11,15 @@ const { componentName } = CONSTANTS;
 const { menuItems } = LOCALES;
 
 function TopBar() {
-  const [pathname, setPathname] = useState(document.location.pathname);
-  const [topBarStyle, setTopbarStyle] = useState({
-    height:
-      window.innerWidth > 992
-        ? CONSTANTS.styleHeight
-        : CONSTANTS.minStyleHeight,
-  });
-  let history = useHistory();
+  const [topBarStyle, setTopbarStyle] = useState({ opacity: 0 });
+  const [selectedMenuItem, setSelectedMenuItem] = useState(menuItems[0].id);
 
   const updateScrollPosition = () => {
     const style = {
-      height: Math.max(
-        CONSTANTS.minStyleHeight,
-        CONSTANTS.styleHeight - window.scrollY / 10
-      ),
+      opacity: window.scrollY / window.innerHeight,
     };
-    const minStyle = { height: CONSTANTS.minStyleHeight };
 
-    setTopbarStyle(window.innerWidth > 992 ? style : minStyle);
+    setTopbarStyle(style);
   };
 
   useEffect(() => {
@@ -43,26 +32,32 @@ function TopBar() {
 
   const items = () => {
     const onItemClick = (menuItem) => {
-      if (pathname !== menuItem.pathname) {
-        history.push(menuItem?.pathname || "");
-        setPathname(menuItem?.pathname || "");
+      const element = $(`#${menuItem?.id}`);
+      setSelectedMenuItem(menuItem?.id);
+      if (element[0]) {
+        $([document.documentElement, document.body]).animate(
+          {
+            scrollTop: element.offset().top - 100,
+          },
+          1000
+        );
       }
     };
 
     let items = menuItems.map((item, index) => {
+      const isSelected = selectedMenuItem === item.id;
       return (
         <div
           className={
-            componentName +
-            "-menu-item" +
-            (pathname === item.pathname ? " selected" : "")
+            componentName + "-menu-item" + (isSelected ? " selected" : "")
           }
           key={index}
           onClick={() => {
             onItemClick(item);
           }}
         >
-          {item?.title ?? ""}
+          <div> {item?.title ?? ""} </div>
+          {isSelected && <div className={componentName + "-dot"} />}
         </div>
       );
     });
@@ -71,13 +66,9 @@ function TopBar() {
   };
 
   return (
-    <div className={componentName} style={topBarStyle}>
-      <img
-        alt="logo"
-        className={componentName + "-logo"}
-        src={IMAGES.logo}
-        style={topBarStyle}
-      />
+    <div className={componentName}>
+      <div className={componentName + "-background"} style={topBarStyle} />
+      <img alt="logo" className={componentName + "-logo"} src={IMAGES.logo} />
       <div className={componentName + "-menu"}>{items()}</div>
     </div>
   );

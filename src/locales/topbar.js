@@ -2,23 +2,23 @@ const LOCALES = {
   menuItems: [
     {
       title: "Início",
-      pathname: "/home",
+      id: "home",
     },
     {
       title: "Peça ajuda",
-      pathname: "/help",
+      id: "help",
     },
     {
       title: "Mova-se",
-      pathname: "/move",
+      id: "move",
     },
     {
       title: "O que fazemos",
-      pathname: "/what-we-do",
+      id: "what-we-do",
     },
     {
       title: "Conheça-nos",
-      pathname: "/about-us",
+      id: "about-us",
     },
   ],
   title: "Ajuda Legal",
