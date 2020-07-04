@@ -1,0 +1,87 @@
+@import "~antd/dist/antd.less";
+@import "../../assets//styles/global.less";
+
+@componentName: ~"about-us";
+
+.@{componentName} {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 50px;
+  padding-right: 50px;
+
+  .@{componentName}-watermark {
+    position: absolute;
+    height: 60%;
+    top: 20%;
+    left: 0px;
+  }
+
+  .@{componentName}-title {
+    color: @primary-color;
+    font-size: 42px;
+    font-family: "Reem Kufi";
+    height: 250px;
+    line-height: 250px;
+    text-align: center;
+  }
+
+  .@{componentName}-text {
+    font-size: 26px;
+    white-space: pre-line;
+    width: 50vw;
+    align-self: flex-end;
+    text-align: right;
+  }
+}
+
+@media only screen and (max-width: @screen-lg) {
+  .@{componentName} {
+    .@{componentName}-title {
+      font-size: 36px;
+      height: 150px;
+      line-height: 150px;
+    }
+  }
+}
+
+@media only screen and (max-width: @screen-md) {
+  .@{componentName} {
+    padding-left: 30px;
+    padding-right: 30px;
+
+    .@{componentName}-title {
+      font-size: 30px;
+    }
+
+    .@{componentName}-text {
+      font-size: 22px;
+      width: 70%;
+    }
+  }
+}
+
+@media only screen and (max-width: @screen-sm) {
+  .@{componentName} {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .@{componentName}-watermark {
+      position: absolute;
+      height: 50%;
+      top: 25%;
+      left: 0px;
+    }
+
+    .@{componentName}-title {
+      font-size: 24px;
+    }
+
+    .@{componentName}-text {
+      font-size: 18px;
+      width: 100%;
+      text-align: justify;
+    }
+  }
+}
