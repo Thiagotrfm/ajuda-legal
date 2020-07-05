@@ -1,0 +1,175 @@
+@import "~antd/dist/antd.less";
+@import "../../assets//styles/global.less";
+
+@componentName: ~"get-help";
+
+.@{componentName} {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 50px;
+  padding-right: 50px;
+
+  .@{componentName}-title {
+    color: @primary-color;
+    font-size: 42px;
+    font-family: "Reem Kufi";
+    height: 250px;
+    line-height: 250px;
+    text-align: center;
+  }
+
+  .@{componentName}-step-left {
+    display: flex;
+    margin-bottom: 20px;
+    position: relative;
+    width: 70%;
+
+    .@{componentName}-step-title {
+      font-family: "Reem Kufi";
+      font-size: 80px;
+      color: @primary-color;
+    }
+
+    .@{componentName}-step-text {
+      font-family: "Montserrat";
+      font-size: 26px;
+      margin-left: 20px;
+      padding-top: 30px;
+    }
+  }
+
+  .@{componentName}-step-right {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 20px;
+    position: relative;
+    width: 70%;
+
+    .@{componentName}-step-title {
+      font-family: "Reem Kufi";
+      font-size: 80px;
+      color: @primary-color;
+    }
+
+    .@{componentName}-step-text {
+      font-family: "Montserrat";
+      font-size: 26px;
+      margin-right: 20px;
+      padding-top: 30px;
+      text-align: right;
+    }
+  }
+
+  .@{componentName}-button {
+    align-self: center;
+    color: @primary-color;
+    cursor: pointer;
+    font-family: "Reem Kufi";
+    font-size: 22px;
+    height: 60px;
+    width: 250px;
+    border: 2px solid @primary-color;
+    border-radius: 8px;
+    line-height: 60px;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+}
+
+@media only screen and (max-width: @screen-lg) {
+  .@{componentName} {
+    .@{componentName}-title {
+      font-size: 36px;
+      height: 150px;
+      line-height: 150px;
+    }
+
+    .@{componentName}-step-left {
+      width: 80%;
+    }
+
+    .@{componentName}-step-right {
+      width: 80%;
+    }
+  }
+}
+
+@media only screen and (max-width: @screen-md) {
+  .@{componentName} {
+    padding-left: 30px;
+    padding-right: 30px;
+
+    .@{componentName}-title {
+      font-size: 30px;
+    }
+
+    .@{componentName}-step-left {
+      .@{componentName}-step-text {
+        font-size: 22px;
+        padding-top: 30px;
+      }
+    }
+
+    .@{componentName}-step-right {
+      .@{componentName}-step-text {
+        font-size: 22px;
+        padding-top: 30px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: @screen-sm) {
+  .@{componentName} {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .@{componentName}-title {
+      font-size: 24px;
+    }
+
+    .@{componentName}-step-left {
+      width: 100%;
+
+      .@{componentName}-step-title {
+        font-size: 150px;
+        position: absolute;
+        opacity: 0.2;
+        top: -50px;
+      }
+
+      .@{componentName}-step-text {
+        font-size: 18px;
+        margin-left: 0px;
+      }
+    }
+
+    .@{componentName}-step-right {
+      width: 100%;
+
+      .@{componentName}-step-title {
+        font-size: 150px;
+        position: absolute;
+        opacity: 0.2;
+        top: -50px;
+      }
+
+      .@{componentName}-step-text {
+        font-size: 18px;
+        margin-right: 0px;
+      }
+    }
+
+    .@{componentName}-button {
+      font-size: 16px;
+      height: 40px;
+      width: 150px;
+      line-height: 40px;
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+  }
+}

@@ -5,8 +5,12 @@ const LOCALES = {
       id: "home",
     },
     {
+      title: "Quem somos",
+      id: "about-us",
+    },
+    {
       title: "Peça ajuda",
-      id: "help",
+      id: "get-help",
     },
     {
       title: "Mova-se",
@@ -15,10 +19,6 @@ const LOCALES = {
     {
       title: "O que fazemos",
       id: "what-we-do",
-    },
-    {
-      title: "Conheça-nos",
-      id: "about-us",
     },
   ],
   title: "Ajuda Legal",

@@ -10,7 +10,7 @@ const { componentName } = CONSTANTS;
 
 function AboutUs() {
   return (
-    <div className={componentName}>
+    <div className={componentName} id={LOCALES.id}>
       <img
         alt="About us"
         src={IMAGES.watermark}
