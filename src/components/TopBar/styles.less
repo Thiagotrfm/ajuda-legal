@@ -40,25 +40,28 @@
 
     .@{componentName}-menu-item {
       color: rgba(255, 255, 255, 0.8);
+      display: flex;
       cursor: pointer;
+      flex-direction: column;
       font-size: 18px;
       font-family: "Reem Kufi";
       height: 30px;
-      margin-left: 10px;
-      margin-right: 10px;
+      padding-left: 15px;
+      padding-right: 15px;
       position: relative;
       text-align: center;
-      width: 120px;
+      width: fit-content;
 
       .@{componentName}-dot {
-        left: 57px;
         position: absolute;
+        align-self: center;
         width: 6px;
         height: 6px;
         border-radius: 3px;
         background-color: white;
         -webkit-animation: fadein 1s linear forwards;
         animation: fadein 1s linear forwards;
+        top: 30px;
         opacity: 0;
       }
     }
@@ -82,14 +85,6 @@
     .@{componentName}-menu {
       .@{componentName}-menu-item {
         font-size: 16px;
-        width: 100px;
-
-        .@{componentName}-dot {
-          left: 47px;
-          width: 4px;
-          height: 4px;
-          border-radius: 2px;
-        }
       }
     }
   }

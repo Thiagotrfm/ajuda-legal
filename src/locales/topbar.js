@@ -13,8 +13,8 @@ const LOCALES = {
       id: "get-help",
     },
     {
-      title: "Mova-se",
-      id: "move",
+      title: "Quero me voluntariar",
+      id: "volunteer",
     },
     {
       title: "O que fazemos",
