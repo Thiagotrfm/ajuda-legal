@@ -1,0 +1,73 @@
+@import "~antd/dist/antd.less";
+@import "../../assets//styles/global.less";
+
+@componentName: ~"footer";
+
+.@{componentName} {
+  background-color: @primary-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 300px;
+  margin-top: 300px;
+  position: relative;
+
+  .@{componentName}-img {
+    margin-top: 50px;
+    width: 400px;
+  }
+
+  .@{componentName}-social-media {
+    margin-top: 30px;
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+
+    .@{componentName}-item {
+      cursor: pointer;
+    }
+  }
+
+  .@{componentName}-copyrights {
+    color: white;
+    bottom: 10px;
+    position: absolute;
+  }
+}
+
+@media only screen and (max-width: @screen-lg) {
+  .@{componentName} {
+    margin-top: 450px;
+
+    .@{componentName}-img {
+      width: 300px;
+    }
+
+    .@{componentName}-social-media {
+      width: 250px;
+
+      .@{componentName}-item {
+        height: 40px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: @screen-sm) {
+  .@{componentName} {
+    margin-top: 450px;
+    height: 250px;
+
+    .@{componentName}-img {
+      width: 250px;
+    }
+
+    .@{componentName}-social-media {
+      width: 200px;
+
+      .@{componentName}-item {
+        height: 30px;
+      }
+    }
+  }
+}

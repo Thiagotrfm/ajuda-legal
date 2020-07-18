@@ -4,6 +4,7 @@ import Header from "../../components/Header";
 import AboutUs from "../../components/AboutUs";
 import GetHelp from "../../components/GetHelp";
 import Volunteer from "../../components/Volunteer";
+import Footer from "../../components/Footer";
 
 import CONSTANTS from "./constants";
 
@@ -18,6 +19,7 @@ function Home() {
       <AboutUs />
       <GetHelp />
       <Volunteer />
+      <Footer />
     </div>
   );
 }
