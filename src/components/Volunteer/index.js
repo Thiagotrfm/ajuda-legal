@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import IMAGES from "../../assets";
@@ -13,22 +13,30 @@ const { componentName } = CONSTANTS;
 function Volunteer() {
   const ref = useRef();
   const dispatch = useDispatch();
+  const [imageStyle, setImageStyle] = useState({});
   const onAnimation = useSelector((state) => state.onAnimation);
 
-  const setMenuItem = () => {
+  const onScroll = () => {
     const newMenuItem = {
       type: SET_MENU_ITEM,
       selectedItem: LOCALES.id,
     };
+    const style = {
+      transform: `translate(0px, ${
+        -(ref.current.offsetTop - window.scrollY) * 0.3
+      }px)`,
+    };
+
+    setImageStyle(style);
     if (ref.current.offsetTop - 70 < window.scrollY && !onAnimation)
       dispatch(newMenuItem);
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", setMenuItem);
+    window.addEventListener("scroll", onScroll);
 
     return () => {
-      window.removeEventListener("scroll", setMenuItem);
+      window.removeEventListener("scroll", onScroll);
     };
   });
 
@@ -40,6 +48,7 @@ function Volunteer() {
           alt="volunteer"
           className={componentName + "-img"}
           src={IMAGES.volunteer}
+          style={imageStyle}
         />
         <div className={componentName + "-overlay"} />
       </div>

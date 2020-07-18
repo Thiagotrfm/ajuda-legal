@@ -18,7 +18,7 @@ function Header() {
   const randomNumber = useRef((Math.round(Math.random() * 10) % 6) + 1);
   const image = IMAGES[`header${randomNumber.current}`];
 
-  const updateScrollPosition = () => {
+  const onScroll = () => {
     const newMenuItem = {
       type: SET_MENU_ITEM,
       selectedItem: LOCALES.id,
@@ -34,10 +34,10 @@ function Header() {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", updateScrollPosition);
+    window.addEventListener("scroll", onScroll);
 
     return () => {
-      window.removeEventListener("scroll", updateScrollPosition);
+      window.removeEventListener("scroll", onScroll);
     };
   });
 
