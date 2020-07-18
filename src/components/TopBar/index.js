@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import CONSTANTS from "./constants";
 import IMAGES from "../../assets";
 import LOCALES from "../../locales/topbar";
-import { SET_MENU_ITEM } from "../../redux/actionTypes";
+import { SET_MENU_ITEM, SET_MENU_ON_ANIMATION } from "../../redux/actionTypes";
 
 import "./styles.less";
 
@@ -39,24 +39,38 @@ function TopBar() {
     };
   });
 
-  const items = () => {
-    const onItemClick = (menuItem) => {
-      const element = $(`#${menuItem?.id}`);
-      const newSelectedItem = {
-        type: SET_MENU_ITEM,
-        selectedItem: menuItem?.id,
-      };
-      dispatch(newSelectedItem);
-      if (element[0]) {
+  const onItemClick = (menuItem) => {
+    const element = $(`#${menuItem?.id}`);
+    const newSelectedItem = {
+      type: SET_MENU_ITEM,
+      selectedItem: menuItem?.id,
+    };
+    const onAnimationTrue = {
+      type: SET_MENU_ON_ANIMATION,
+      onAnimation: true,
+    };
+    const onAnimationFalse = {
+      type: SET_MENU_ON_ANIMATION,
+      onAnimation: false,
+    };
+    dispatch(newSelectedItem);
+    dispatch(onAnimationTrue);
+    if (element[0]) {
+      setTimeout(() => {
+        dispatch(onAnimationFalse);
+      }, 1100);
+      setTimeout(() => {
         $([document.documentElement, document.body]).animate(
           {
-            scrollTop: element.offset().top - 100,
+            scrollTop: element.offset().top - 70,
           },
           1000
         );
-      }
-    };
+      }, 100);
+    }
+  };
 
+  const items = () => {
     let items = menuItems.map((item, index) => {
       const isSelected = selectedMenuItem === item.id;
       return (

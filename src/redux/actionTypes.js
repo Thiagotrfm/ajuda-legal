@@ -1,1 +1,2 @@
 export const SET_MENU_ITEM = "SET_MENU_ITEM";
+export const SET_MENU_ON_ANIMATION = "SET_MENU_ON_ANIMATION";

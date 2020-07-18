@@ -1,7 +1,8 @@
-import { SET_MENU_ITEM } from "./actionTypes";
+import { SET_MENU_ITEM, SET_MENU_ON_ANIMATION } from "./actionTypes";
 
 const initialState = {
   selectedItem: "home",
+  onAnimation: false,
 };
 
 function topBarReducer(state = initialState, action) {
@@ -10,6 +11,11 @@ function topBarReducer(state = initialState, action) {
       return {
         ...state,
         selectedItem: action.selectedItem,
+      };
+    case SET_MENU_ON_ANIMATION:
+      return {
+        ...state,
+        onAnimation: action.onAnimation,
       };
     default:
       return state;
