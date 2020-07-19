@@ -19,11 +19,10 @@ function Footer() {
       <div className={componentName + "-social-media"}>
         {socialMedia.map((item, index) => {
           return (
-            <a href={item.link} target="blank">
+            <a href={item.link} key={index} target="blank">
               <img
                 alt="social media"
                 className={componentName + "-item"}
-                key={index}
                 href={item.link}
                 src={item.image}
               />

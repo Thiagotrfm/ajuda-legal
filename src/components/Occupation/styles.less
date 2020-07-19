@@ -1,0 +1,201 @@
+@import "~antd/dist/antd.less";
+@import "../../assets//styles/global.less";
+
+@componentName: ~"occupation";
+
+.@{componentName} {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 50px;
+  padding-right: 50px;
+
+  .@{componentName}-title {
+    color: @secondary-color;
+    font-size: 42px;
+    font-family: "Reem Kufi";
+    height: 250px;
+    line-height: 250px;
+    text-align: center;
+  }
+
+  .@{componentName}-tabs {
+    min-height: 660px;
+    height: fit-content;
+
+    .@{componentName}-menu {
+      display: flex;
+
+      .@{componentName}-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 12.5%;
+        height: 60px;
+        font-family: "Reem Kufi";
+        font-size: 14px;
+        position: relative;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+        cursor: pointer;
+
+        .@{componentName}-selected-item {
+          bottom: 0px;
+          width: calc(100% - 20px);
+          background-color: @secondary-color;
+          height: 3px;
+          position: absolute;
+        }
+      }
+    }
+
+    .@{componentName}-content {
+      display: flex;
+      min-height: 600px;
+      height: fit-content;
+      margin-top: 50px;
+      opacity: 0;
+      -webkit-animation: fadein 1s linear forwards;
+      animation: fadein 1s linear forwards;
+
+      .@{componentName}-header {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 50%;
+
+        .@{componentName}-img-loading {
+          background: rgba(0, 0, 0, 0.05);
+          width: 60%;
+          height: 90%;
+          overflow-y: hidden;
+          position: relative;
+
+          .@{componentName}-img {
+            width: 100%;
+            height: 150%;
+            object-fit: cover;
+            top: -25%;
+            position: absolute;
+            animation: move 1s linear fowards;
+          }
+        }
+
+        .@{componentName}-title {
+          background-color: white;
+          font-size: 42px;
+          line-height: 42px;
+          color: @text-color;
+          height: fit-content;
+          padding: 10px;
+          position: absolute;
+          width: min-content;
+          -webkit-animation: move 1s linear forwards;
+          animation: move 1s linear forwards;
+        }
+      }
+
+      .@{componentName}-text {
+        display: flex;
+        align-items: center;
+        font-family: "Montserrat";
+        font-size: 22px;
+        width: 50%;
+        white-space: pre-line;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: @screen-lg) {
+  .@{componentName} {
+    .@{componentName}-title {
+      font-size: 36px;
+      height: 150px;
+      line-height: 150px;
+    }
+
+    .@{componentName}-tabs {
+      .@{componentName}-menu {
+        flex-wrap: wrap;
+        .@{componentName}-item {
+          width: 25%;
+          font-size: 14px;
+
+          .@{componentName}-selected-item {
+            height: 2px;
+            width: 80%;
+          }
+        }
+      }
+
+      .@{componentName}-content {
+        height: 600px;
+        margin-top: 50px;
+
+        .@{componentName}-header {
+          .@{componentName}-img-loading {
+            height: 100%;
+            width: 80%;
+          }
+
+          .@{componentName}-title {
+            font-size: 36px;
+            line-height: 36px;
+          }
+        }
+
+        .@{componentName}-text {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: @screen-md) {
+  .@{componentName} {
+    padding-left: 30px;
+    padding-right: 30px;
+
+    .@{componentName}-title {
+      font-size: 30px;
+    }
+  }
+}
+
+@media only screen and (max-width: @screen-sm) {
+  .@{componentName} {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .@{componentName}-title {
+      font-size: 24px;
+    }
+  }
+}
+
+@-webkit-keyframes fadein {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes move {
+  100% {
+    transform: translate(20px, 20px);
+  }
+}
+
+@keyframes move {
+  100% {
+    transform: translate(20px, 20px);
+  }
+}

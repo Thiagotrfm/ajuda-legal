@@ -9,16 +9,16 @@ const LOCALES = {
       id: "about-us",
     },
     {
+      title: "Em que atuamos",
+      id: "occupation",
+    },
+    {
       title: "Peça ajuda",
       id: "get-help",
     },
     {
       title: "Quero me voluntariar",
       id: "volunteer",
-    },
-    {
-      title: "O que fazemos",
-      id: "what-we-do",
     },
   ],
   title: "Ajuda Legal",

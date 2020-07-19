@@ -5,6 +5,7 @@ import AboutUs from "../../components/AboutUs";
 import GetHelp from "../../components/GetHelp";
 import Volunteer from "../../components/Volunteer";
 import Footer from "../../components/Footer";
+import Occupation from "../../components/Occupation";
 
 import CONSTANTS from "./constants";
 
@@ -17,6 +18,7 @@ function Home() {
     <div className={pageName}>
       <Header />
       <AboutUs />
+      <Occupation />
       <GetHelp />
       <Volunteer />
       <Footer />
