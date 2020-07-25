@@ -3,7 +3,7 @@ const LOCALES = {
   button: "FAZER CADASTRO",
   title: "QUERO ME VOLUNTARIAR",
   text:
-    "Mussum Ipsum, cacilds vidis litro abertis. Praesent malesuada urna nisi, quis volutpat erat hendrerit non.",
+    "Quer fazer a diferença na vida de alguém?\n Venha compor o nosso time de voluntários!",
 };
 
 export default LOCALES;

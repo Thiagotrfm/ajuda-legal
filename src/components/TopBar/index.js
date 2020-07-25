@@ -11,7 +11,7 @@ import { SET_MENU_ITEM, SET_MENU_ON_ANIMATION } from "../../redux/actionTypes";
 import "./styles.less";
 
 const { componentName } = CONSTANTS;
-const { menuItems } = LOCALES;
+const { mapIdToTitle, menuItems } = LOCALES;
 const spring = {
   type: "spring",
   stiffness: 500,
@@ -20,8 +20,13 @@ const spring = {
 
 function TopBar() {
   const [topBarStyle, setTopbarStyle] = useState({ opacity: 0 });
+  const [isTouchable, setIsTouchable] = useState(window.innerWidth < 768);
   const selectedMenuItem = useSelector((state) => state.selectedItem);
   const dispatch = useDispatch();
+
+  const onResize = () => {
+    setIsTouchable(window.innerWidth < 768);
+  };
 
   const updateScrollPosition = () => {
     const style = {
@@ -33,9 +38,11 @@ function TopBar() {
 
   useEffect(() => {
     window.addEventListener("scroll", updateScrollPosition);
+    window.addEventListener("resize", onResize);
 
     return () => {
       window.removeEventListener("scroll", updateScrollPosition);
+      window.removeEventListener("scroll", onResize);
     };
   });
 
@@ -103,9 +110,16 @@ function TopBar() {
     <div className={componentName}>
       <div className={componentName + "-background"} style={topBarStyle} />
       <img alt="logo" className={componentName + "-logo"} src={IMAGES.logo} />
-      <AnimateSharedLayout>
-        <div className={componentName + "-menu"}>{items()}</div>
-      </AnimateSharedLayout>
+      {isTouchable ? (
+        <div className={componentName + "-title"}>
+          {" "}
+          {mapIdToTitle[selectedMenuItem]}{" "}
+        </div>
+      ) : (
+        <AnimateSharedLayout>
+          <div className={componentName + "-menu"}>{items()}</div>
+        </AnimateSharedLayout>
+      )}
     </div>
   );
 }

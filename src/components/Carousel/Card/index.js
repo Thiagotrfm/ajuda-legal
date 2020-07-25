@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
 
 import CONSTANTS from "./constants";
 
@@ -17,10 +17,34 @@ function Card({
   handleTouchStart,
   onClick,
 }) {
+  const [imageStyle, setImageStyle] = useState({});
+  const ref = useRef();
   const style = {
     left: 50 + index * (window.innerWidth - 80) + fx,
     width: window.innerWidth - 100,
     top: index === currentIndex - 1 || index === currentIndex + 1 ? 20 : 0,
+  };
+  const randomNumber = useMemo(
+    () => Math.round(Math.random() * 100) % item.image.length,
+    [item.image.length]
+  );
+
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  });
+
+  const onScroll = () => {
+    const style = {
+      transform: `translate(0px, ${
+        -(ref.current.offsetTop - window.scrollY) * 0.1
+      }px)`,
+    };
+
+    setImageStyle(style);
   };
 
   return (
@@ -33,13 +57,15 @@ function Card({
       onClick={() => {
         onClick(index);
       }}
+      ref={ref}
       style={style}
     >
       <div className={componentName + "-header"}>
         <img
           alt={item.title}
           className={componentName + "-img"}
-          src={item.image}
+          src={item.image[randomNumber]}
+          style={imageStyle}
         />
         <div className={componentName + "-overlay"}>
           <div

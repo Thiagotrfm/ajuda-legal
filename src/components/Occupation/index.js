@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  useCallback,
+  useMemo,
+} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { motion, AnimateSharedLayout } from "framer-motion";
 
@@ -32,6 +38,10 @@ function Occupation() {
   const onAnimation = useSelector((state) => state.onAnimation);
   const ref = useRef();
   const dispatch = useDispatch();
+  const randomNumber = useMemo(
+    () => Math.round(Math.random() * 100) % selectedItem.image.length,
+    [selectedItem.image.length]
+  );
 
   const onResize = () => {
     setIsTouchable(window.innerWidth < 768);
@@ -122,7 +132,7 @@ function Occupation() {
             <img
               alt={selectedItem.title}
               className={componentName + "-img"}
-              src={selectedItem.image}
+              src={selectedItem.image[randomNumber]}
               style={imageStyle}
             />
           </div>

@@ -64,7 +64,7 @@
 
   .@{componentName}-button {
     align-self: center;
-    color: @primary-color;
+    color: @primary-color !important;
     cursor: pointer;
     font-family: "Reem Kufi";
     font-size: 22px;
@@ -76,6 +76,9 @@
     text-align: center;
     margin-bottom: 40px;
     margin-top: 40px;
+    a {
+      color: @primary-color;
+    }
   }
 }
 
@@ -101,6 +104,7 @@
   .@{componentName} {
     padding-left: 30px;
     padding-right: 30px;
+    padding-bottom: 30px;
 
     .@{componentName}-title {
       font-size: 30px;
@@ -129,6 +133,8 @@
 
     .@{componentName}-title {
       font-size: 24px;
+      height: 100px;
+      line-height: 100px;
     }
 
     .@{componentName}-step-left {

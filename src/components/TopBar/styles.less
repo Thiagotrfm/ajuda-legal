@@ -26,6 +26,20 @@
     width: 100%;
   }
 
+  .@{componentName}-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: "Reem Kufi";
+    font-size: 36px;
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    left: 0px;
+    z-index: 2;
+  }
+
   .@{componentName}-logo {
     object-fit: scale-down;
     margin-right: 30px;
@@ -84,6 +98,22 @@
       .@{componentName}-menu-item {
         font-size: 16px;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: @screen-sm) {
+  .@{componentName} {
+    padding-left: 10px;
+    padding-right: 10px;
+
+    .@{componentName}-logo {
+      margin-left: 0px;
+      width: 80px;
+    }
+
+    .@{componentName}-title {
+      font-size: 20px;
     }
   }
 }

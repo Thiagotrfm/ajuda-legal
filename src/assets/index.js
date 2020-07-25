@@ -13,7 +13,8 @@ import orientacao from "./images/orientacao.jpg";
 import penal from "./images/penal.jpg";
 import previdencia from "./images/previdencia.png";
 import trabalho from "./images/trabalho.png";
-import minorias from "./images/minorias.jpg";
+import minorias1 from "./images/minorias1.jpg";
+import minorias2 from "./images/minorias2.jpg";
 import facebook from "./images/facebook.png";
 import email from "./images/email.png";
 import instagram from "./images/instagram.png";
@@ -37,7 +38,8 @@ const IMAGES = {
   penal: penal,
   previdencia: previdencia,
   trabalho: trabalho,
-  minorias: minorias,
+  minorias1: minorias1,
+  minorias2: minorias2,
   facebook: facebook,
   email: email,
   instagram: instagram,

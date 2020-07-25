@@ -63,7 +63,11 @@ function GetHelp() {
           {LOCALES.steps.third.text}{" "}
         </div>
       </div>
-      <div className={componentName + "-button"}>{LOCALES.button}</div>
+      <div className={componentName + "-button"}>
+        <a href="https://forms.gle/a5e23vPTVB9QL7RE7" target="blank">
+          {LOCALES.button}
+        </a>
+      </div>
     </div>
   );
 }

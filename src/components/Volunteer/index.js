@@ -54,7 +54,14 @@ function Volunteer() {
       </div>
       <div className={componentName + "-right-frame"}>
         <div className={componentName + "-text"}>{LOCALES.text}</div>
-        <div className={componentName + "-button"}>{LOCALES.button}</div>
+        <div className={componentName + "-button"}>
+          <a
+            href="https://docs.google.com/forms/d/1qp1sE4B8HB_Z6wWJOPHk5CtY0oOlDsHDAlxwL5blRMI/edit?ts=5f05df24"
+            target="blank"
+          >
+            {LOCALES.button}
+          </a>
+        </div>
       </div>
     </div>
   );
