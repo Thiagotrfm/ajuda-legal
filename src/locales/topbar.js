@@ -21,6 +21,13 @@ const LOCALES = {
       id: "volunteer",
     },
   ],
+  mapIdToTitle: {
+    "about-us": "Quem Somos",
+    "get-help": "Peça ajuda",
+    home: "Início",
+    occupation: "Em que atuamos",
+    volunteer: "Quero me voluntariar",
+  },
   title: "Ajuda Legal",
 };
 
