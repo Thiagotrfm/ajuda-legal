@@ -25,7 +25,6 @@ function AboutUs() {
       ref.current.offsetTop + ref.current.clientHeight - 70 > window.scrollY &&
       !onAnimation
     ) {
-      console.log("OI");
       dispatch(newMenuItem);
     }
   };

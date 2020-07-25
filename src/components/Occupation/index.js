@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { motion, AnimateSharedLayout } from "framer-motion";
 
+import Carousel from "../Carousel";
+
 import CONSTANTS from "./constants";
 import LOCALES from "../../locales/occupation";
 import { SET_MENU_ITEM } from "../../redux/actionTypes";
@@ -23,12 +25,17 @@ const initialRandomPosition = {
 function Occupation() {
   const [selectedItem, setSelectedItem] = useState(options[0]);
   const [showContent, setShowContent] = useState(true);
+  const [isTouchable, setIsTouchable] = useState(window.innerWidth < 768);
   const [oposite, setOposite] = useState(true);
   const [randomPosition, setRandomPosition] = useState(initialRandomPosition);
   const [imageStyle, setImageStyle] = useState({});
   const onAnimation = useSelector((state) => state.onAnimation);
   const ref = useRef();
   const dispatch = useDispatch();
+
+  const onResize = () => {
+    setIsTouchable(window.innerWidth < 768);
+  };
 
   const onScroll = () => {
     const newMenuItem = {
@@ -52,9 +59,11 @@ function Occupation() {
 
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
+    window.addEventListener("resize", onResize);
 
     return () => {
       window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("scroll", onResize);
     };
   });
 
@@ -136,10 +145,14 @@ function Occupation() {
   return (
     <div ref={ref} className={componentName} id={LOCALES.id}>
       <div className={componentName + "-title"}> {LOCALES.title} </div>
-      <div className={componentName + "-tabs"}>
-        {renderMenu()}
-        {showContent && renderContent()}
-      </div>
+      {isTouchable ? (
+        <Carousel />
+      ) : (
+        <div className={componentName + "-tabs"}>
+          {renderMenu()}
+          {showContent && renderContent()}
+        </div>
+      )}
     </div>
   );
 }
