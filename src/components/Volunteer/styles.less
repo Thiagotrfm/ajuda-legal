@@ -10,7 +10,7 @@
 
   .@{componentName}-title {
     color: @secondary-color;
-    font-size: 42px;
+    font-size: @title-size;
     font-family: "Reem Kufi";
     height: 250px;
     line-height: 250px;
@@ -67,7 +67,7 @@
     .@{componentName}-text {
       color: white;
       font-family: "Montserrat";
-      font-size: 36px;
+      font-size: @font-size;
       margin-bottom: 100px;
       margin-top: 150px;
       white-space: pre-line;
@@ -85,10 +85,6 @@
       border-radius: 8px;
       line-height: 60px;
       text-align: center;
-
-      a {
-        color: white;
-      }
     }
   }
 }
@@ -96,7 +92,7 @@
 @media only screen and (max-width: @screen-lg) {
   .@{componentName} {
     .@{componentName}-title {
-      font-size: 36px;
+      font-size: @title-size-lg;
       height: 150px;
       line-height: 150px;
       z-index: 2;
@@ -116,7 +112,7 @@
   .@{componentName} {
     .@{componentName}-title {
       color: white;
-      font-size: 30px;
+      font-size: @title-size-md;
     }
 
     .@{componentName}-left-frame {
@@ -155,7 +151,7 @@
       z-index: 2;
 
       .@{componentName}-text {
-        font-size: 32px;
+        font-size: @font-size-md;
         margin-top: 50px;
       }
     }
@@ -165,7 +161,7 @@
 @media only screen and (max-width: @screen-sm) {
   .@{componentName} {
     .@{componentName}-title {
-      font-size: 24px;
+      font-size: @title-size-sm;
       height: 100px;
       line-height: 100px;
     }
@@ -175,7 +171,7 @@
       padding-right: 15px;
 
       .@{componentName}-text {
-        font-size: 24px;
+        font-size: @font-size-sm;
       }
 
       .@{componentName}-button {

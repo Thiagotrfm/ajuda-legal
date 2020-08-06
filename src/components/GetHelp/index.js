@@ -10,6 +10,10 @@ import "./styles.less";
 
 const { componentName } = CONSTANTS;
 
+const handleButtonPress = () => {
+  window.open("https://forms.gle/a5e23vPTVB9QL7RE7", "_blank");
+};
+
 function GetHelp() {
   const ref = useRef();
   const dispatch = useDispatch();
@@ -63,10 +67,8 @@ function GetHelp() {
           {LOCALES.steps.third.text}{" "}
         </div>
       </div>
-      <div className={componentName + "-button"}>
-        <a href="https://forms.gle/a5e23vPTVB9QL7RE7" target="blank">
-          {LOCALES.button}
-        </a>
+      <div className={componentName + "-button"} onClick={handleButtonPress}>
+        {LOCALES.button}
       </div>
     </div>
   );

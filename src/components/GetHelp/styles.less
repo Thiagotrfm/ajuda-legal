@@ -12,7 +12,7 @@
 
   .@{componentName}-title {
     color: @primary-color;
-    font-size: 42px;
+    font-size: @title-size;
     font-family: "Reem Kufi";
     height: 250px;
     line-height: 250px;
@@ -33,7 +33,7 @@
 
     .@{componentName}-step-text {
       font-family: "Montserrat";
-      font-size: 26px;
+      font-size: @font-size;
       margin-left: 20px;
       padding-top: 30px;
     }
@@ -55,7 +55,7 @@
 
     .@{componentName}-step-text {
       font-family: "Montserrat";
-      font-size: 26px;
+      font-size: @font-size;
       margin-right: 20px;
       padding-top: 30px;
       text-align: right;
@@ -67,7 +67,7 @@
     color: @primary-color !important;
     cursor: pointer;
     font-family: "Reem Kufi";
-    font-size: 22px;
+    font-size: @font-size;
     height: 60px;
     width: 250px;
     border: 2px solid @primary-color;
@@ -76,16 +76,13 @@
     text-align: center;
     margin-bottom: 40px;
     margin-top: 40px;
-    a {
-      color: @primary-color;
-    }
   }
 }
 
 @media only screen and (max-width: @screen-lg) {
   .@{componentName} {
     .@{componentName}-title {
-      font-size: 36px;
+      font-size: @title-size-lg;
       height: 150px;
       line-height: 150px;
     }
@@ -107,19 +104,19 @@
     padding-bottom: 30px;
 
     .@{componentName}-title {
-      font-size: 30px;
+      font-size: @title-size-md;
     }
 
     .@{componentName}-step-left {
       .@{componentName}-step-text {
-        font-size: 22px;
+        font-size: @font-size-md;
         padding-top: 30px;
       }
     }
 
     .@{componentName}-step-right {
       .@{componentName}-step-text {
-        font-size: 22px;
+        font-size: @font-size-md;
         padding-top: 30px;
       }
     }
@@ -132,7 +129,7 @@
     padding-right: 15px;
 
     .@{componentName}-title {
-      font-size: 24px;
+      font-size: @title-size-sm;
       height: 100px;
       line-height: 100px;
     }
@@ -148,7 +145,7 @@
       }
 
       .@{componentName}-step-text {
-        font-size: 18px;
+        font-size: @font-size-sm;
         margin-left: 0px;
       }
     }
@@ -159,12 +156,12 @@
       .@{componentName}-step-title {
         font-size: 150px;
         position: absolute;
-        opacity: 0.2;
+        opacity: 0.3;
         top: -50px;
       }
 
       .@{componentName}-step-text {
-        font-size: 18px;
+        font-size: @font-size-sm;
         margin-right: 0px;
       }
     }

@@ -150,7 +150,7 @@ function Occupation() {
         <div className={componentName + "-text"}> {selectedItem.text} </div>
       </div>
     );
-  }, [imageStyle, oposite, randomPosition, selectedItem]);
+  }, [imageStyle, oposite, randomNumber, randomPosition, selectedItem]);
 
   return (
     <div ref={ref} className={componentName} id={LOCALES.id}>

@@ -12,7 +12,7 @@
 
   .@{componentName}-title {
     color: @secondary-color;
-    font-size: 42px;
+    font-size: @title-size;
     font-family: "Reem Kufi";
     height: 250px;
     line-height: 250px;
@@ -25,6 +25,7 @@
 
     .@{componentName}-menu {
       display: flex;
+      justify-content: space-between;
 
       .@{componentName}-item {
         display: flex;
@@ -84,8 +85,8 @@
 
         .@{componentName}-title {
           background-color: white;
-          font-size: 42px;
-          line-height: 42px;
+          font-size: @title-size;
+          line-height: @title-size;
           color: @text-color;
           height: fit-content;
           padding: 10px;
@@ -100,7 +101,7 @@
         display: flex;
         align-items: center;
         font-family: "Montserrat";
-        font-size: 22px;
+        font-size: @font-size;
         width: 50%;
         white-space: pre-line;
       }
@@ -111,7 +112,7 @@
 @media only screen and (max-width: @screen-lg) {
   .@{componentName} {
     .@{componentName}-title {
-      font-size: 36px;
+      font-size: @title-size-lg;
       height: 150px;
       line-height: 150px;
     }
@@ -119,6 +120,8 @@
     .@{componentName}-tabs {
       .@{componentName}-menu {
         flex-wrap: wrap;
+        justify-content: flex-start;
+
         .@{componentName}-item {
           width: 25%;
           font-size: 14px;
@@ -141,13 +144,13 @@
           }
 
           .@{componentName}-title {
-            font-size: 36px;
-            line-height: 36px;
+            font-size: @title-size-lg;
+            line-height: @title-size-lg;
           }
         }
 
         .@{componentName}-text {
-          font-size: 18px;
+          font-size: @font-size-lg;
         }
       }
     }
@@ -160,7 +163,7 @@
     padding-right: 30px;
 
     .@{componentName}-title {
-      font-size: 30px;
+      font-size: @title-size-md;
     }
   }
 }
@@ -171,7 +174,7 @@
     padding-right: 15px;
 
     .@{componentName}-title {
-      font-size: 24px;
+      font-size: @title-size-sm;
       height: 100px;
       line-height: 100px;
     }

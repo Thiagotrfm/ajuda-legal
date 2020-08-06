@@ -10,6 +10,13 @@ import "./styles.less";
 
 const { componentName } = CONSTANTS;
 
+const handleButtonPress = () => {
+  window.open(
+    "https://docs.google.com/forms/d/1qp1sE4B8HB_Z6wWJOPHk5CtY0oOlDsHDAlxwL5blRMI/edit?ts=5f05df24",
+    "_blank"
+  );
+};
+
 function Volunteer() {
   const ref = useRef();
   const dispatch = useDispatch();
@@ -54,13 +61,8 @@ function Volunteer() {
       </div>
       <div className={componentName + "-right-frame"}>
         <div className={componentName + "-text"}>{LOCALES.text}</div>
-        <div className={componentName + "-button"}>
-          <a
-            href="https://docs.google.com/forms/d/1qp1sE4B8HB_Z6wWJOPHk5CtY0oOlDsHDAlxwL5blRMI/edit?ts=5f05df24"
-            target="blank"
-          >
-            {LOCALES.button}
-          </a>
+        <div className={componentName + "-button"} onClick={handleButtonPress}>
+          {LOCALES.button}
         </div>
       </div>
     </div>
